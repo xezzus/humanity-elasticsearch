@@ -1,0 +1,35 @@
+{
+    "name": "humanity/elasticsearch",
+    "description": "ElasticSearch PHP lib",
+    "keywords": [
+        "PHP",
+        "ElasticSearch"
+    ],
+    "homepage": "https://github.com/xezzus/humanity-elasticsearch",
+    "type": "library",
+    "license": "The MIT License (MIT)",
+    "authors": [
+        {
+            "name": "Buturlakin Andrey",
+            "email": "xezzus@gmail.com",
+            "homepage": "https://github.com/xezzus",
+            "role": "Founder and project lead"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/xezzus/humanity-elasticsearch/issues",
+        "wiki": "https://github.com/xezzus/humanity-elasticsearch/wiki",
+        "source": "https://github.com/xezzus/humanity-elasticsearch"
+    },
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {"humanity\\": ""}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
