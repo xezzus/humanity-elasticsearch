@@ -25,7 +25,7 @@ class ElasticSearchRequest {
 
     public function delete(){
         curl_setopt(self::$init, CURLOPT_CUSTOMREQUEST, 'DELETE');
-        return curl_exec(self::$init);
+        return json_decode(curl_exec(self::$init),true);
     }
 
     public function put($params){
@@ -33,7 +33,7 @@ class ElasticSearchRequest {
         curl_setopt(self::$init, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt(self::$init, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($params)));
         curl_setopt(self::$init,CURLOPT_POSTFIELDS,$params);
-        return curl_exec(self::$init);
+        return json_decode(curl_exec(self::$init),true);
     }
 
     public function post($params){
@@ -41,17 +41,17 @@ class ElasticSearchRequest {
         curl_setopt(self::$init, CURLOPT_POST,true);
         curl_setopt(self::$init, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($params)));
         curl_setopt(self::$init,CURLOPT_POSTFIELDS,$params);
-        return curl_exec(self::$init);
+        return json_decode(curl_exec(self::$init),true);
     }
 
     public function get(){
-        return curl_exec(self::$init);
+        return json_decode(curl_exec(self::$init),true);
     }
 
     public function head(){
         curl_setopt(self::$init, CURLOPT_HEADER, true);
         curl_setopt(self::$init, CURLOPT_CUSTOMREQUEST, 'HEAD');
-        return curl_exec(self::$init);
+        return json_decode(curl_exec(self::$init),true);
     }
 
 }
