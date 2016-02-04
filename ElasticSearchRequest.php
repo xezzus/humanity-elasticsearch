@@ -29,6 +29,7 @@ class ElasticSearchRequest {
     }
 
     public function put($params){
+        if(is_array($params)) $params = json_encode($params);
         curl_setopt(self::$init, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt(self::$init, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($params)));
         curl_setopt(self::$init,CURLOPT_POSTFIELDS,$params);
@@ -36,6 +37,7 @@ class ElasticSearchRequest {
     }
 
     public function post($params){
+        if(is_array($params)) $params = json_encode($params);
         curl_setopt(self::$init, CURLOPT_POST,true);
         curl_setopt(self::$init, CURLOPT_HTTPHEADER, array('Content-Type: application/json','Content-Length: ' . strlen($params)));
         curl_setopt(self::$init,CURLOPT_POSTFIELDS,$params);
